@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name="event")
+@Entity(name="Event")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
