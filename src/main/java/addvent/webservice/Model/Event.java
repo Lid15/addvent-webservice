@@ -17,8 +17,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Version
-    private Long version;
+    /*@Version
+    private Long version;*/
 
     @NotNull
     @Size(min = 2, max = 30)
@@ -54,13 +54,13 @@ public class Event {
         this.id = id;
     }
 
-    public Long getVersion() {
+    /*public Long getVersion() {
         return version;
     }
 
     public void setVersion(Long version) {
         this.version = version;
-    }
+    }*/
 
     public String getTitle() {
         return title;
