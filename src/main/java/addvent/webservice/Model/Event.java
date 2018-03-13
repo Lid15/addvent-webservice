@@ -26,7 +26,7 @@ public class Event {
 
     @org.hibernate.annotations.Type(type="true_false")
     @NotNull
-    private boolean byNord;
+    private boolean bynord;
 
     private String location;
 
@@ -48,7 +48,7 @@ public class Event {
         this.host = host;
         this.description = description;
         this.time = time;
-        this.byNord = byNord;
+        this.bynord = byNord;
     }
 
     public Long getId() {

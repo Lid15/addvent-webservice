@@ -30,7 +30,6 @@ public class EventController {
     @ResponseBody
     public List<Event> findAllEvents() {
         List<Event> events = eventRepository.findAllByOrderByTime();
-        System.out.println(events);
         return events;
     }
 
