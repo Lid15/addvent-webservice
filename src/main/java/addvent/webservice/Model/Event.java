@@ -108,10 +108,10 @@ public class Event {
     }
 
     public boolean getByNord() {
-        return byNord;
+        return bynord;
     }
 
     public void setByNord(boolean byNord) {
-        this.byNord = byNord;
+        this.bynord = byNord;
     }
 }
