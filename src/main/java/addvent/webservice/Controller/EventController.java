@@ -25,7 +25,7 @@ public class EventController {
     }
 
 
-    @RequestMapping(value="/all", method = RequestMethod.GET)
+    @RequestMapping(value="/all", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public List<Event> findAllEvents() {
         List<Event> events = eventRepository.findAllByOrderByTime();
