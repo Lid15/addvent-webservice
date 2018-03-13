@@ -46,17 +46,4 @@ public class EventController {
         return events;
     }
 
-    /*@RequestMapping(value="/add", method = RequestMethod.POST)
-    public ResponseEntity<Ride> AddUser(@RequestBody Ride r) {
-        Ride ride = new Ride();
-        ride.setFrom(r.getFrom());
-        ride.setTo(r.getTo());
-        ride.setFromDate(r.getFromDate());
-        ride.setToDate(r.getToDate());
-        ride.setUser(r.getUser());
-        ride.setStopovers(r.getStopovers());
-
-        rideRepository.save(ride);
-        return new ResponseEntity<>(ride, HttpStatus.OK);
-    }*/
 }
