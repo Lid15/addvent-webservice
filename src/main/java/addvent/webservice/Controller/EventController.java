@@ -27,8 +27,22 @@ public class EventController {
 
     @RequestMapping(value="/all", method = RequestMethod.GET)
     @ResponseBody
-    public List<Event> findAllUsers() {
+    public List<Event> findAllEvents() {
         List<Event> events = eventRepository.findAllByOrderByTime();
+        return events;
+    }
+
+    @RequestMapping(value="/nordEvents", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Event> findNordEvents() {
+        List<Event> events = eventRepository.findByByNord(true);
+        return events;
+    }
+
+    @RequestMapping(value="/otherEvents", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Event> findOtherEvents() {
+        List<Event> events = eventRepository.findByByNord(false);
         return events;
     }
 

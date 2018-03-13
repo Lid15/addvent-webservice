@@ -24,6 +24,9 @@ public class Event {
     @Size(min = 2, max = 30)
     private String title;
 
+    @NotNull
+    private Boolean byNord;
+
     private String location;
 
     private String host;
@@ -37,13 +40,14 @@ public class Event {
     public Event() {
     }
 
-    public Event(String title, String location, String host, String description, LocalDateTime time) {
+    public Event(String title, String location, String host, String description, LocalDateTime time, Boolean byNord) {
         this();
         this.title = title;
         this.location = location;
         this.host = host;
         this.description = description;
         this.time = time;
+        this.byNord = byNord;
     }
 
     public Long getId() {
@@ -100,5 +104,13 @@ public class Event {
 
     public void setTime(LocalDateTime time) {
         this.time = time;
+    }
+
+    public Boolean getByNord() {
+        return byNord;
+    }
+
+    public void setByNord(Boolean byNord) {
+        this.byNord = byNord;
     }
 }
