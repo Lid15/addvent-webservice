@@ -8,5 +8,5 @@ import java.util.List;
 public interface EventRepository extends JpaRepository<Event, Long> {
     List<Event> findAllByOrderByTime();
 
-    List<Event> findByByNord(boolean byNord);
+    List<Event> findByBynord(boolean byNord);
 }
