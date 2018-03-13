@@ -26,7 +26,7 @@ public class Event {
 
     @org.hibernate.annotations.Type(type="true_false")
     @NotNull
-    private boolean bynord;
+    private boolean byNord;
 
     private String location;
 
@@ -48,7 +48,7 @@ public class Event {
         this.host = host;
         this.description = description;
         this.time = time;
-        this.bynord = byNord;
+        this.byNord = byNord;
     }
 
     public Long getId() {
@@ -108,10 +108,10 @@ public class Event {
     }
 
     public boolean getByNord() {
-        return bynord;
+        return byNord;
     }
 
     public void setByNord(boolean byNord) {
-        this.bynord = byNord;
+        this.byNord = byNord;
     }
 }
