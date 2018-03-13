@@ -2,6 +2,7 @@ package addvent.webservice.Controller;
 
 import addvent.webservice.Model.Event;
 import addvent.webservice.Repository.EventRepository;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,11 +26,12 @@ public class EventController {
     }
 
 
-    @RequestMapping(value="/all", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
+    @RequestMapping(value="/all", method = RequestMethod.GET)
     @ResponseBody
-    public List<Event> findAllEvents() {
+    public String findAllEvents() {
         List<Event> events = eventRepository.findAllByOrderByTime();
-        return events;
+        String json = new Gson().toJson(events);
+        return json;
     }
 
     @RequestMapping(value="/nordEvents", method = RequestMethod.GET)
