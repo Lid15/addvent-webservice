@@ -28,7 +28,7 @@ public class EventController {
     @RequestMapping(value="/all", method = RequestMethod.GET)
     @ResponseBody
     public List<Event> findAllUsers() {
-        List<Event> events = eventRepository.findAll();
+        List<Event> events = eventRepository.findAllByOrderByTime();
         return events;
     }
 
