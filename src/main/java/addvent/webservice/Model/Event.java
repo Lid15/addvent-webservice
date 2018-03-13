@@ -33,7 +33,7 @@ public class Event {
 
     /*@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime time;*/
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     @Column(name="date")
     private Date date;
 
