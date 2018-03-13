@@ -28,10 +28,10 @@ public class EventController {
 
     @RequestMapping(value="/all", method = RequestMethod.GET)
     @ResponseBody
-    public String findAllEvents() {
+    public List<Event> findAllEvents() {
         List<Event> events = eventRepository.findAllByOrderByTime();
         String json = new Gson().toJson(events);
-        return json;
+        return events;
     }
 
     @RequestMapping(value="/nordEvents", method = RequestMethod.GET)
