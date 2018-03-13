@@ -35,14 +35,14 @@ public class EventController {
     @RequestMapping(value="/nordEvents", method = RequestMethod.GET)
     @ResponseBody
     public List<Event> findNordEvents() {
-        List<Event> events = eventRepository.findByByNord(true);
+        List<Event> events = eventRepository.findByBynord(true);
         return events;
     }
 
     @RequestMapping(value="/otherEvents", method = RequestMethod.GET)
     @ResponseBody
     public List<Event> findOtherEvents() {
-        List<Event> events = eventRepository.findByByNord(false);
+        List<Event> events = eventRepository.findByBynord(false);
         return events;
     }
 
