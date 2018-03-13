@@ -31,22 +31,19 @@ public class Event {
     @Size(min = 2, max = 140)
     private String description;
 
-    /*@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime time;*/
-    //@Temporal(TemporalType.DATE)
-    @Column(name="date")
-    private Date date;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime time;
 
     public Event() {
     }
 
-    public Event(String title, String location, String host, String description, Date date) {
+    public Event(String title, String location, String host, String description, LocalDateTime time) {
         this();
         this.title = title;
         this.location = location;
         this.host = host;
         this.description = description;
-        this.date = date;
+        this.time = time;
     }
 
     public Long getId() {
@@ -97,11 +94,11 @@ public class Event {
         this.description = description;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDateTime getTime() {
+        return time;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTime(LocalDateTime time) {
+        this.time = time;
     }
 }
