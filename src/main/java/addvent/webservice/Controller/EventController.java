@@ -52,8 +52,7 @@ public class EventController {
 
     public ResponseEntity<Event> addEvent(/*@RequestBody Event e*/){
         Event event = new Event();
-        boolean b = true;
-        event.setBynord(b);
+        event.setBynord(true);
         event.setDescription("spilakvöld niðrí nörd");
         event.setHost("Nörd");
         event.setLocation("Nördakjallarinn");
@@ -61,6 +60,36 @@ public class EventController {
         event.setTime("2018-3-16 17:00:00");
         event.setTitle("Spilakvöld Nörd");
         eventRepository.save(event);
+
+        Event event1 = new Event();
+        event.setBynord(true);
+        event.setDescription("Rosa skemmtileg vísó í Origo");
+        event.setHost("Nörd");
+        event.setLocation("Origo");
+
+        event.setTime("2018-3-23 17:00:00");
+        event.setTitle("Vísó í Origo");
+        eventRepository.save(event1);
+
+        Event event2 = new Event();
+        event.setBynord(false);
+        event.setDescription("Útilega með öllum í FV");
+        event.setHost("FV");
+        event.setLocation("Úti á landi");
+
+        event.setTime("2018-7-19 14:00:00");
+        event.setTitle("Útilega FV");
+        eventRepository.save(event2);
+
+        Event event3 = new Event();
+        event.setBynord(true);
+        event.setDescription("Árshátíð Nörd verður algjör snilld");
+        event.setHost("Nörd");
+        event.setLocation("Félagsheimili Seltjarnarnes");
+
+        event.setTime("2018-3-24 18:00:00");
+        event.setTitle("Árshátíð Nörd");
+        eventRepository.save(event3);
 
         return new ResponseEntity<>(event, HttpStatus.OK);
     }
