@@ -6,7 +6,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,8 +37,8 @@ public class Event {
     @Size(min = 2, max = 140)
     private String description;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime time;
+    //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date time;
 
     public Event() {
     }
@@ -47,7 +49,8 @@ public class Event {
         this.location = location;
         this.host = host;
         this.description = description;
-        this.time = time;
+        Instant instant = time.atZone(ZoneId.systemDefault()).toInstant();
+        this.time = Date.from(instant);
         this.bynord = byNord;
     }
 
@@ -99,12 +102,13 @@ public class Event {
         this.description = description;
     }
 
-    public LocalDateTime getTime() {
+    public Date getTime() {
         return time;
     }
 
     public void setTime(LocalDateTime time) {
-        this.time = time;
+        Instant instant = time.atZone(ZoneId.systemDefault()).toInstant();
+        this.time = Date.from(instant);
     }
 
     public boolean getByNord() {
