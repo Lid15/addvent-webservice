@@ -48,9 +48,9 @@ public class Event {
         this.location = location;
         this.host = host;
         this.description = description;
-        //this.time = time;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        this.time = LocalDateTime.parse(time.format(formatter), formatter);
+        this.time = time;
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
         this.bynord = byNord;
     }
 
@@ -107,8 +107,9 @@ public class Event {
     }
 
     public void setTime(LocalDateTime time) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        this.time = LocalDateTime.parse(time.format(formatter), formatter);
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
+        this.time = time;
     }
 
     public boolean getByNord() {
