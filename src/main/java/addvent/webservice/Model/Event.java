@@ -1,6 +1,7 @@
 package addvent.webservice.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -102,6 +103,7 @@ public class Event {
         this.description = description;
     }
 
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd hh:mm:ss")
     public LocalDateTime getTime() {
         return time;
     }
