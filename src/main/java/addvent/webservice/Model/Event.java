@@ -3,6 +3,7 @@ package addvent.webservice.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.tomcat.jni.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -27,7 +28,7 @@ public class Event {
     @Size(min = 2, max = 30)
     private String title;
 
-    //@org.hibernate.annotations.Type(type="true_false")
+    @org.hibernate.annotations.Type(type="true_false")
     @NotNull
     @JsonProperty
     private boolean bynord;
@@ -53,8 +54,8 @@ public class Event {
         this.host = host;
         this.description = description;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        this.time = time;
         //this.time = time.format(formatter);
+        this.time = time;
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
         //this.bynord = Boolean.parseBoolean(byNord);

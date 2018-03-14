@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -51,12 +52,13 @@ public class EventController {
 
     public ResponseEntity<Event> addEvent(@RequestBody Event e){
         Event event = new Event();
-        event.setBynord(e.getBynord());
-        event.setDescription(e.getDescription());
-        event.setHost(e.getHost());
-        event.setLocation(e.getLocation());
-        event.setTime(e.getTime());
-        event.setTitle(e.getTitle());
+        event.setBynord(true);
+        event.setDescription("spilakvöld niðrí nörd");
+        event.setHost("Nörd");
+        event.setLocation("Nördakjallarinn");
+
+        event.setTime("2018-3-16 17:00:00");
+        event.setTitle("Spilakvöld Nörd");
         eventRepository.save(event);
 
         return new ResponseEntity<>(event, HttpStatus.OK);
