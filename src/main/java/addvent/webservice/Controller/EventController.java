@@ -51,7 +51,7 @@ public class EventController {
 
     public ResponseEntity<Event> addEvent(@RequestBody Event e){
         Event event = new Event();
-        event.setByNord(e.getByNord());
+        event.setBynord(e.getBynord());
         event.setDescription(e.getDescription());
         event.setHost(e.getHost());
         event.setLocation(e.getLocation());
