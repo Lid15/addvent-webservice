@@ -47,4 +47,17 @@ public class EventController {
         return events;
     }
 
+    @RequestMapping(value="/addEvent", method = RequestMethod.POST)
+    @ResponseBody
+    public void addEvent(@RequestBody Event e){
+        Event event = new Event();
+        event.setByNord(e.getByNord());
+        event.setDescription(e.getDescription());
+        event.setHost(e.getHost());
+        event.setLocation(e.getLocation());
+        event.setTime(e.getTime());
+        event.setTitle(e.getTitle());
+        eventRepository.save(event);
+    }
+
 }

@@ -110,12 +110,12 @@ public class Event {
         return time;
     }
 
-    public void setTime(LocalDateTime time) {
+    public void setTime(String time) {
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
-        //this.time = time;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        this.time = time.format(formatter);
+        this.time = time;
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = time.format(formatter);*/
     }
 
     public boolean getByNord() {
