@@ -27,7 +27,7 @@ public class Event {
     @Size(min = 2, max = 30)
     private String title;
 
-    //@org.hibernate.annotations.Type(type="true_false")
+    @org.hibernate.annotations.Type(type="true_false")
     @NotNull
     @JsonProperty
     private boolean bynord;
@@ -46,14 +46,15 @@ public class Event {
     public Event() {
     }
 
-    public Event(String title, String location, String host, String description, LocalDateTime time, boolean byNord) {
+    public Event(String title, String location, String host, String description, String time, boolean byNord) {
         this();
         this.title = title;
         this.location = location;
         this.host = host;
         this.description = description;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        this.time = time.format(formatter);
+        this.time = time;
+        //this.time = time.format(formatter);
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
         //this.bynord = Boolean.parseBoolean(byNord);
