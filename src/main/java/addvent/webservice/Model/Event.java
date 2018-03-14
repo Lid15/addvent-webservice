@@ -27,7 +27,7 @@ public class Event {
     @Size(min = 2, max = 30)
     private String title;
 
-    @org.hibernate.annotations.Type(type="true_false")
+    //@org.hibernate.annotations.Type(type="true_false")
     @NotNull
     @JsonProperty
     private boolean bynord;
