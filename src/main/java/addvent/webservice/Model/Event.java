@@ -36,7 +36,7 @@ public class Event {
     @Size(min = 2, max = 140)
     private String description;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(/*iso = DateTimeFormat.ISO.DATE_TIME*/pattern = "yyyy-MM-dd hh:mm:ss")
     private LocalDateTime time;
 
     public Event() {
@@ -107,7 +107,8 @@ public class Event {
     }
 
     public void setTime(LocalDateTime time) {
-        this.time = time;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = LocalDateTime.parse(time.format(formatter), formatter);
     }
 
     public boolean getByNord() {
