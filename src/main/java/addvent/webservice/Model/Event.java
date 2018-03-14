@@ -121,11 +121,11 @@ public class Event {
         this.time = time.format(formatter);*/
     }
 
-    public boolean getByNord() {
+    public boolean getBynord() {
         return bynord;
     }
 
-    public void setByNord(boolean byNord) {
+    public void setBynord(boolean byNord) {
         this.bynord = byNord;
     }
 }
