@@ -62,33 +62,33 @@ public class EventController {
         eventRepository.save(event);
 
         Event event1 = new Event();
-        event.setBynord(true);
-        event.setDescription("Rosa skemmtileg vísó í Origo");
-        event.setHost("Nörd");
-        event.setLocation("Origo");
+        event1.setBynord(true);
+        event1.setDescription("Rosa skemmtileg vísó í Origo");
+        event1.setHost("Nörd");
+        event1.setLocation("Origo");
 
-        event.setTime("2018-3-23 17:00:00");
-        event.setTitle("Vísó í Origo");
+        event1.setTime("2018-3-23 17:00:00");
+        event1.setTitle("Vísó í Origo");
         eventRepository.save(event1);
 
         Event event2 = new Event();
-        event.setBynord(false);
-        event.setDescription("Útilega með öllum í FV");
-        event.setHost("FV");
-        event.setLocation("Úti á landi");
+        event2.setBynord(false);
+        event2.setDescription("Útilega með öllum í FV");
+        event2.setHost("FV");
+        event2.setLocation("Úti á landi");
 
-        event.setTime("2018-7-19 14:00:00");
-        event.setTitle("Útilega FV");
+        event2.setTime("2018-7-19 14:00:00");
+        event2.setTitle("Útilega FV");
         eventRepository.save(event2);
 
         Event event3 = new Event();
-        event.setBynord(true);
-        event.setDescription("Árshátíð Nörd verður algjör snilld");
-        event.setHost("Nörd");
-        event.setLocation("Félagsheimili Seltjarnarnes");
+        event3.setBynord(true);
+        event3.setDescription("Árshátíð Nörd verður algjör snilld");
+        event3.setHost("Nörd");
+        event3.setLocation("Félagsheimili Seltjarnarnes");
 
-        event.setTime("2018-3-24 18:00:00");
-        event.setTitle("Árshátíð Nörd");
+        event3.setTime("2018-3-24 18:00:00");
+        event3.setTitle("Árshátíð Nörd");
         eventRepository.save(event3);
 
         return new ResponseEntity<>(event, HttpStatus.OK);
