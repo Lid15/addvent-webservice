@@ -48,10 +48,10 @@ public class EventController {
         return events;
     }
 
-    @RequestMapping(value="/addEvent", method = RequestMethod.GET)
+    @RequestMapping(value="/addEvent", method = RequestMethod.POST)
 
-    public ResponseEntity<Event> addEvent(/*@RequestBody Event e*/){
-        Event event = new Event();
+    public ResponseEntity<Event> addEvent(@RequestBody Event e){
+        /*Event event = new Event();
         event.setBynord(true);
         event.setDescription("spilakvöld niðrí nörd");
         event.setHost("Nörd");
@@ -89,8 +89,17 @@ public class EventController {
 
         event3.setTime("2018-3-24 18:00:00");
         event3.setTitle("Árshátíð Nörd");
-        eventRepository.save(event3);
+        eventRepository.save(event3);*/
 
+        Event event = new Event();
+        event.setTitle(e.getTitle());
+        event.setLocation(e.getLocation());
+        event.setHost(e.getHost());
+        event.setDescription(e.getDescription());
+        event.setBynord(e.getBynord());
+        event.setTime(e.getTime());
+        eventRepository.save(event);
+        
         return new ResponseEntity<>(event, HttpStatus.OK);
     }
 
