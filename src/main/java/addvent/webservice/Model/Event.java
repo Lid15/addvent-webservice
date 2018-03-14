@@ -38,8 +38,8 @@ public class Event {
     private String description;
 
     //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME, pattern = "yyyy-MM-dd hh:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private LocalDateTime time;
+    //@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    private String time;
 
     public Event() {
     }
@@ -50,7 +50,8 @@ public class Event {
         this.location = location;
         this.host = host;
         this.description = description;
-        this.time = time;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = time.format(formatter);
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
         this.bynord = byNord;
@@ -104,15 +105,17 @@ public class Event {
         this.description = description;
     }
 
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd hh:mm:ss")
-    public LocalDateTime getTime() {
+    //@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd hh:mm:ss")
+    public String getTime() {
         return time;
     }
 
     public void setTime(LocalDateTime time) {
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
-        this.time = time;
+        //this.time = time;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        this.time = time.format(formatter);
     }
 
     public boolean getByNord() {
