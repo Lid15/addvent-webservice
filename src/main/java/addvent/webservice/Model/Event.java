@@ -46,7 +46,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(String title, String location, String host, String description, LocalDateTime time, String byNord) {
+    public Event(String title, String location, String host, String description, LocalDateTime time, boolean byNord) {
         this();
         this.title = title;
         this.location = location;
@@ -56,7 +56,8 @@ public class Event {
         this.time = time.format(formatter);
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         this.time = LocalDateTime.parse(time.format(formatter), formatter);*/
-        this.bynord = Boolean.parseBoolean(byNord);
+        //this.bynord = Boolean.parseBoolean(byNord);
+        this.bynord = byNord;
     }
 
     public Long getId() {
