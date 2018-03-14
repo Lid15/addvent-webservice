@@ -48,8 +48,8 @@ public class EventController {
     }
 
     @RequestMapping(value="/addEvent", method = RequestMethod.POST)
-    @ResponseBody
-    public void addEvent(@RequestBody Event e){
+
+    public ResponseEntity<Event> addEvent(@RequestBody Event e){
         Event event = new Event();
         event.setByNord(e.getByNord());
         event.setDescription(e.getDescription());
@@ -58,6 +58,8 @@ public class EventController {
         event.setTime(e.getTime());
         event.setTitle(e.getTitle());
         eventRepository.save(event);
+
+        return new ResponseEntity<>(event, HttpStatus.OK);
     }
 
 }
