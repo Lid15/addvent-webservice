@@ -21,9 +21,6 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /*@Version
-    private Long version;*/
-
     @NotNull
     @Size(min = 2, max = 30)
     private String title;
