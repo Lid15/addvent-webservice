@@ -30,7 +30,6 @@ public class Event {
 
     @org.hibernate.annotations.Type(type="true_false")
     @NotNull
-    @JsonProperty
     private boolean bynord;
 
     private String location;

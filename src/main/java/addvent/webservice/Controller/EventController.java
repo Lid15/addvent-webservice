@@ -52,7 +52,8 @@ public class EventController {
 
     public ResponseEntity<Event> addEvent(/*@RequestBody Event e*/){
         Event event = new Event();
-        event.setBynord(true);
+        boolean b = true;
+        event.setBynord(b);
         event.setDescription("spilakvöld niðrí nörd");
         event.setHost("Nörd");
         event.setLocation("Nördakjallarinn");
