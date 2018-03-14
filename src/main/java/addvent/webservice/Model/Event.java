@@ -37,7 +37,8 @@ public class Event {
     @Size(min = 2, max = 140)
     private String description;
 
-    @DateTimeFormat(/*iso = DateTimeFormat.ISO.DATE_TIME*/pattern = "yyyy-MM-dd hh:mm:ss")
+    //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME, pattern = "yyyy-MM-dd hh:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private LocalDateTime time;
 
     public Event() {
