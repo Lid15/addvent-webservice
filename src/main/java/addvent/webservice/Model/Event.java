@@ -2,6 +2,7 @@ package addvent.webservice.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Event {
 
     @org.hibernate.annotations.Type(type="true_false")
     @NotNull
+    @JsonProperty
     private boolean bynord;
 
     private String location;
