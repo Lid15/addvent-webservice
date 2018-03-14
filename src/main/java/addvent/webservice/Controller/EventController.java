@@ -48,9 +48,9 @@ public class EventController {
         return events;
     }
 
-    @RequestMapping(value="/addEvent", method = RequestMethod.POST)
+    @RequestMapping(value="/addEvent", method = RequestMethod.GET)
 
-    public ResponseEntity<Event> addEvent(@RequestBody Event e){
+    public ResponseEntity<Event> addEvent(/*@RequestBody Event e*/){
         Event event = new Event();
         event.setBynord(true);
         event.setDescription("spilakvöld niðrí nörd");
